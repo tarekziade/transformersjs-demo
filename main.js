@@ -4,11 +4,9 @@ const generateButton = document.getElementById("generate-button");
 const output = document.getElementById("summary-output");
 const spinner = document.getElementById("spinner");
 const stats = document.getElementById("summary-stats");
+const buttonText = document.getElementById("button-text");
 
-const summarization = await pipeline(
-  "summarization", // task
-  "Xenova/t5-small", // model
-);
+const summarization = await pipeline("summarization", "Xenova/t5-small");
 
 function cleanOutput(text) {
   const sentences = text.split(/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s/g);
@@ -20,6 +18,7 @@ function cleanOutput(text) {
   return capitalizedSentences.join(" ");
 }
 
+buttonText.textContent = "Summarize";
 generateButton.removeAttribute("disabled");
 
 generateButton.addEventListener("click", async () => {
