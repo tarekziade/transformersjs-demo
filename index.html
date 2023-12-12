@@ -6,18 +6,23 @@
     <title>Summary Generator</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="main.js" type="module" defer></script>
+    <!--script src="https://code.jquery.com/jquery-3.6.4.min.js"></script-->
+
+    <script src="https://rawgit.com/mozilla/readability/master/Readability.js"></script>
   </head>
   <body>
-    <div class="container">
-      <textarea
-        id="long-text-input"
-        placeholder="Enter your copy here..."
-      ></textarea>
-      <button id="generate-button" disabled>
-        <span id="spinner">🔄</span> Generate Summary
-      </button>
-      <div id="output-div"></div>
-      <div id="stats"></div>
+    <div id="sidebar">
+      <div class="container">
+        <button id="generate-button" disabled>
+          <span id="spinner">🔄</span> Generate Summary
+        </button>
+        <div id="summary-output"></div>
+        <div id="summary-stats"></div>
+      </div>
+    </div>
+
+    <div id="content">
+      <iframe id="article" src="Sandman.html"> </iframe>
     </div>
   </body>
 </html>
