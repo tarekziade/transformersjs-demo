@@ -6,10 +6,17 @@ body {
 }
 
 #sidebar {
-  width: 200px;
+  width: 300px;
   background-color: #f2f2f2;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#mapPopup {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  display: none;
 }
 
 #summary-output {

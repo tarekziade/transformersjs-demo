@@ -9,6 +9,11 @@
     <!--script src="https://code.jquery.com/jquery-3.6.4.min.js"></script-->
 
     <script src="https://rawgit.com/mozilla/readability/master/Readability.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   </head>
   <body>
     <div id="sidebar">
@@ -19,6 +24,18 @@
         </button>
         <div id="summary-output"></div>
         <div id="summary-stats"></div>
+
+        <button id="generate-alt-text" disabled>
+          <span id="spinner-alt">🔄</span>
+          <span id="button-alt-text">Loading model...</span>
+        </button>
+        <div id="alt-text-output"></div>
+        <div
+          id="mapPopup"
+          style="width: 200px; height: 200px; display: none"
+        ></div>
+        <div id="imagePopup" style="display: none; position: absolute"></div>
+        <div id="alt-text-stats"></div>
       </div>
     </div>
 
