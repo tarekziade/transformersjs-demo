@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Summary Generator</title>
+    <title>Transfomer.js demos</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
     <script src="main.js" type="module" defer></script>
-    <!--script src="https://code.jquery.com/jquery-3.6.4.min.js"></script-->
-
     <script src="https://rawgit.com/mozilla/readability/master/Readability.js"></script>
     <link
       rel="stylesheet"
@@ -16,31 +15,44 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   </head>
   <body>
-    <div id="sidebar">
-      <div class="container">
-        <button id="generate-button" disabled>
-          <span id="spinner">🔄</span>
-          <span id="button-text">Loading model...</span>
-        </button>
-        <div id="summary-output"></div>
-        <div id="summary-stats"></div>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <a class="brand" href="#">GAI Demos</a>
+          <div class="tabs">
+            <a href="index.html" class="active">Summarize</a>
+            <a href="classification.html">Group</a>
+          </div>
+        </div>
+      </nav>
 
-        <button id="generate-alt-text" disabled>
-          <span id="spinner-alt">🔄</span>
-          <span id="button-alt-text">Loading model...</span>
-        </button>
-        <div id="alt-text-output"></div>
-        <div
-          id="mapPopup"
-          style="width: 200px; height: 200px; display: none"
-        ></div>
-        <div id="imagePopup" style="display: none; position: absolute"></div>
-        <div id="alt-text-stats"></div>
+      <h1>Summarizer and NER</h1>
+      <p>Click on the buttons to summarize the page and find named entities</p>
+
+      <div class="row" style="height: 100%">
+        <div class="col-3" id="sidebar">
+          <button class="button primary" id="generate-button" disabled>
+            <span id="button-text">Loading model...</span>
+          </button>
+          <div id="summary-output"></div>
+          <div id="summary-stats"></div>
+
+          <button class="button primary" id="generate-alt-text" disabled>
+            <span id="button-alt-text">Loading model...</span>
+          </button>
+          <div id="alt-text-output"></div>
+          <div
+            id="mapPopup"
+            style="width: 200px; height: 200px; display: none"
+          ></div>
+          <div id="imagePopup" style="display: none; position: absolute"></div>
+          <div id="alt-text-stats"></div>
+        </div>
+
+        <div id="content" class="col-10">
+          <iframe id="article" src="Sandman.html"> </iframe>
+        </div>
       </div>
-    </div>
-
-    <div id="content">
-      <iframe id="article" src="Sandman.html"> </iframe>
     </div>
   </body>
 </html>

@@ -5,8 +5,6 @@ const altButton = document.getElementById("generate-alt-text");
 const altText = document.getElementById("button-alt-text");
 const generateButton = document.getElementById("generate-button");
 const output = document.getElementById("summary-output");
-const spinner = document.getElementById("spinner");
-const spinnerAlt = document.getElementById("spinner-alt");
 const altTextOutput = document.getElementById("alt-text-output");
 const altStats = document.getElementById("alt-text-stats");
 const stats = document.getElementById("summary-stats");
@@ -232,13 +230,12 @@ function cleanOutput(text) {
   return capitalizedSentences.join(" ");
 }
 
-altText.textContent = "Find Named Entities";
+altText.textContent = "NER";
 buttonText.textContent = "Summarize";
 generateButton.removeAttribute("disabled");
 altButton.removeAttribute("disabled");
 
 generateButton.addEventListener("click", async () => {
-  spinner.classList.add("show");
   generateButton.setAttribute("disabled", true);
 
   console.log("Extracting article with readability...");
@@ -270,13 +267,11 @@ generateButton.addEventListener("click", async () => {
 
   stats.innerHTML = stext;
 
-  spinner.classList.remove("show");
   generateButton.removeAttribute("disabled");
   output.style.display = "block";
 });
 
 altButton.addEventListener("click", async () => {
-  spinnerAlt.classList.add("show");
   altButton.setAttribute("disabled", true);
 
   console.log("Extracting article with readability...");
@@ -308,6 +303,5 @@ altButton.addEventListener("click", async () => {
   altStats.innerHTML = stext;
   altTextOutput.appendChild(createEntityList(reconstructedNames));
 
-  spinnerAlt.classList.remove("show");
   altButton.removeAttribute("disabled");
 });
