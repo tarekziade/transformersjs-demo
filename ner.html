@@ -6,7 +6,7 @@
     <title>Transfomer.js demos</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
-    <script src="main.js" type="module" defer></script>
+    <script src="ner.js" type="module" defer></script>
     <script src="https://rawgit.com/mozilla/readability/master/Readability.js"></script>
     <link
       rel="stylesheet"
@@ -20,23 +20,28 @@
         <div class="nav-left">
           <a class="brand" href="#">GAI Demos</a>
           <div class="tabs">
-            <a href="index.html" class="active">Summarize</a>
-            <a href="ner.html">NER</a>
+            <a href="index.html">Summarize</a>
+            <a href="ner.html" class="active">NER</a>
             <a href="classification.html">Group</a>
           </div>
         </div>
       </nav>
 
-      <h1>Summarizer</h1>
-      <p>Model: Xenova/t5-small (35.6 MiB)</p>
+      <h1>Named Entity Recogntion</h1>
+      <p>Model: Xenova/bert-base-multilingual-cased-ner-hrl (87.2MiB)</p>
 
       <div class="row" style="height: 100%">
         <div class="col-3" id="sidebar">
-          <button class="button primary" id="generate-button" disabled>
-            <span id="button-text">Loading model...</span>
+          <button class="button primary" id="generate-alt-text" disabled>
+            <span id="button-alt-text">Loading model...</span>
           </button>
-          <div id="summary-output"></div>
-          <div id="summary-stats"></div>
+          <div id="alt-text-output"></div>
+          <div
+            id="mapPopup"
+            style="width: 200px; height: 200px; display: none"
+          ></div>
+          <div id="imagePopup" style="display: none; position: absolute"></div>
+          <div id="alt-text-stats"></div>
         </div>
 
         <div id="content" class="col-10">
