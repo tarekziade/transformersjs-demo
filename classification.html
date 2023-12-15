@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab grouping</title>
+    <script src="zshot.js" type="module" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tab grouping with zero-shot classification</h1>
+
+      <p>Click on the button to group titles by the best key word</p>
+      <div class="row">
+        <div class="col">
+          <ul>
+            <li>Model: Xenova/nli-deberta-v3-xsmall (87.2 MiB)</li>
+            <li>
+              Embed Inference Runtime: Transformers.js / onnxruntine (WASM)
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <label for="labels">Enter Labels:</label>
+          <input
+            type="text"
+            id="labels"
+            name="labels"
+            value="japan, travel, food, work"
+          />
+          <button class="button primary" id="groupButton" disabled>
+            Loading model...
+          </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col card" id="stats"></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <textarea id="titles" name="titles" rows="20" cols="50">
+A Traveler's Guide to Onsen Culture
+A First-Timer's Guide to Visiting East Asia
+Sushi Making Techniques from Osaka's Chefs
+Discover Hidden Gems in Rural Areas
+The Secrets of Perfect Tempura
+Career Opportunities in the Hospitality Sector
+Opportunities for Expats in the Tech Industry
+Vegan Dining Options in Japanese Cuisine
+Fusion Flavors: Western Influences in Asian Cuisine
+Exploring Natural Beauty: A Hiking Guide
+Exploring Tokyo's Best Ramen Shops
+A Guide to Kyoto's Traditional Kaiseki Cuisine
+Street Food Delights in Fukuoka
+The Art of Japanese Tea Ceremonies
+Discovering Regional Sake Varieties
+Authentic Okonomiyaki Cooking Techniques
+Budget Backpacking Through Japan
+Historical Landmarks of Nara
+Navigating the Rail System: Tips and Tricks
+Best Winter Destinations in Asia
+Navigating Business Etiquette in East Asia
+Mastering Language for Business Purposes
+Remote Working Spots in Metropolitan Cities
+Emerging Start-Up Scenes Globally
+Balancing Work and Life in a Busy City
+</textarea
+          >
+        </div>
+        <div class="col">
+          <textarea
+            id="titles-grouped"
+            name="titles"
+            rows="20"
+            cols="50"
+            readonly
+          >
+          </textarea>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

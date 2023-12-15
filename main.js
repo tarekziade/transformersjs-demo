@@ -1,4 +1,5 @@
 import { pipeline } from "https://cdn.jsdelivr.net/npm/@xenova/transformers";
+//import { pipeline } from "https://ziade.org/transformers.js/transformers.js";
 
 const altButton = document.getElementById("generate-alt-text");
 const altText = document.getElementById("button-alt-text");
