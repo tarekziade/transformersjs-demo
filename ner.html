@@ -23,18 +23,30 @@
             <a href="index.html">Summarize</a>
             <a href="ner.html" class="active">NER</a>
             <a href="classification.html">Group</a>
+            <a href="topics.html">Topics</a>
           </div>
         </div>
       </nav>
 
-      <h1>Named Entity Recogntion</h1>
-      <p>Model: Xenova/bert-base-multilingual-cased-ner-hrl (87.2MiB)</p>
+      <div class="card" style="margin-top: 15px; margin-bottom: 15px">
+        <header>
+          <h4>Named Entity Recognition</h4>
+        </header>
+        <p>
+          Extracts text from the web page with Readability.js then find persons
+          and locations using NER.
+        </p>
 
-      <div class="row" style="height: 100%">
-        <div class="col-3" id="sidebar">
+        <p>Model: Xenova/bert-base-multilingual-cased-ner-hrl (87.2MiB)</p>
+        <footer class="is-right">
           <button class="button primary" id="generate-alt-text" disabled>
             <span id="button-alt-text">Loading model...</span>
           </button>
+        </footer>
+      </div>
+
+      <div class="row" style="height: 100%">
+        <div class="col-3" id="sidebar">
           <div id="alt-text-output"></div>
           <div
             id="mapPopup"

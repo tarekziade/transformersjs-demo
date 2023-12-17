@@ -23,18 +23,31 @@
             <a href="index.html" class="active">Summarize</a>
             <a href="ner.html">NER</a>
             <a href="classification.html">Group</a>
+            <a href="topics.html">Topics</a>
           </div>
         </div>
       </nav>
 
-      <h1>Summarizer</h1>
-      <p>Model: Xenova/t5-small (35.6 MiB)</p>
+      <div class="card" style="margin-top: 15px; margin-bottom: 15px">
+        <header>
+          <h4>Summarizer</h4>
+        </header>
+        <p>
+          Extracts text from the web page with Readability.js then
+          extreme-summarizes it using a small t5-model.
+        </p>
 
-      <div class="row" style="height: 100%">
-        <div class="col-3" id="sidebar">
+        <p>Model: Xenova/t5-small (35.6 MiB)</p>
+
+        <footer class="is-right">
           <button class="button primary" id="generate-button" disabled>
             <span id="button-text">Loading model...</span>
           </button>
+        </footer>
+      </div>
+
+      <div class="row" style="height: 100%">
+        <div class="col-3" id="sidebar">
           <div id="summary-output"></div>
           <div id="summary-stats"></div>
         </div>
