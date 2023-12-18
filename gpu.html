@@ -75,7 +75,11 @@
         <header>
           <h4>onnxruntime with WebGPU enabled</h4>
         </header>
-        <p>Loads a model and runs a MatMul on the GPU.</p>
+        <p>
+          Loads a model and runs a MatMul on the GPU. To activate WebGPU make
+          sure yo urun Nightly and toggle `gfx.webgpu.ignore-blocklist`,
+          `dom.webgpu.workers.enabled` and `dom.webgpu.enabled` in about:config
+        </p>
 
         <footer class="is-right">
           <button class="button primary" id="generate-button">Generate</button>
