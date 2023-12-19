@@ -1,15 +1,22 @@
 import { pipeline } from "https://cdn.jsdelivr.net/npm/@xenova/transformers";
 
 const groupButton = document.getElementById("groupButton");
+const suggestButton = document.getElementById("suggestButton");
 
 const classifier = await pipeline(
   "zero-shot-classification",
   //"Xenova/mobilebert-uncased-mnli",
   "Xenova/nli-deberta-v3-xsmall",
 );
+const extractor = await pipeline(
+  "text-classification",
+  "tarekziade/topic_classification",
+);
 
 groupButton.textContent = "Group";
 groupButton.removeAttribute("disabled");
+suggestButton.textContent = "Suggest";
+suggestButton.removeAttribute("disabled");
 
 groupButton.addEventListener("click", async () => {
   var titlesString = document.getElementById("titles").value;

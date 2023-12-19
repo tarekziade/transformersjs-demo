@@ -6,7 +6,7 @@ const stats = document.getElementById("stats");
 
 const extractor = await pipeline(
   "text-classification",
-  "tarekziade/distilbert-reuters21578",
+  "tarekziade/topic_classification",
 );
 
 function cleanOutput(text) {
@@ -30,7 +30,7 @@ findTopicButton.addEventListener("click", async () => {
 
   console.log("Find topics...");
 
-  var result = await extractor(input, { topk: null });
+  var result = await extractor(input); //, { topk: null });
 
   result = result.filter(function(item) {
     return item.score > 0.1;

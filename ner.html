@@ -13,19 +13,14 @@
       href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="utils.js" type="module" defer></script>
   </head>
   <body>
     <div class="container">
       <nav class="nav">
         <div class="nav-left">
           <a class="brand" href="#">GAI Demos</a>
-          <div class="tabs">
-            <a href="index.html">Summarize</a>
-            <a href="ner.html" class="active">NER</a>
-            <a href="classification.html">Group</a>
-            <a href="topics.html">Topics</a>
-            <a href="gpu.html">GPU</a>
-          </div>
+          <div class="tabs" id="navigation">Loading...</div>
         </div>
       </nav>
 

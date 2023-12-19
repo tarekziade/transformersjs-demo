@@ -6,6 +6,7 @@
     <title>Tab grouping</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="topics.js" type="module" defer></script>
+    <script src="utils.js" type="module" defer></script>
     <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
   </head>
   <body>
@@ -13,13 +14,7 @@
       <nav class="nav">
         <div class="nav-left">
           <a class="brand" href="#">GAI Demos</a>
-          <div class="tabs">
-            <a href="index.html">Summarize</a>
-            <a href="ner.html">NER</a>
-            <a href="classification.html">Group</a>
-            <a href="topics.html" class="active">Topics</a>
-            <a href="gpu.html">GPU</a>
-          </div>
+          <div class="tabs" id="navigation">Loading...</div>
         </div>
       </nav>
 
@@ -27,9 +22,8 @@
         <header>
           <h4>Text classifier</h4>
         </header>
-        <p>Uses the Reuteurs 21578 dataset to label the text.</p>
 
-        <p>Model: tarekziade/distilbert-reuters21578 (66.3 MiB)</p>
+        <p>Model: tarekziade/topic_classification (13.3 MiB)</p>
         <footer class="is-right">
           <button class="button primary" id="findTopicButton" disabled>
             Loading model...

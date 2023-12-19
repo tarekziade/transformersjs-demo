@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Tab grouping</title>
+    <script src="auto.js" type="module" defer></script>
+    <script src="utils.js" type="module" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <nav class="nav">
+            <div class="nav-left">
+              <a class="brand" href="#">GAI Demos</a>
+              <div class="tabs" id="navigation">Loading...</div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 15px; margin-bottom: 15px">
+        <header>
+          <h4>Auto Tab grouping with topic extraction</h4>
+        </header>
+        <p>
+          Model: Topic extraction: tarekziade/topic_classification (13.3 MiB)
+        </p>
+
+        <footer class="is-right">
+          <button class="button primary" id="suggestButton" disabled>
+            Loading model...
+          </button>
+        </footer>
+      </div>
+
+      <div class="row">
+        <div class="col card" id="stats"></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <textarea id="titles" name="titles" rows="50" cols="50">
+Exploring Onsen Culture: A Global Perspective
+The Intricacies of Traditional Tea Ceremonies Worldwide
+Traditional Spirits and Wines: A Global Tour
+Cultural Heritage in Global Cuisines
+Hiking and Exploring Nature's Wonders Worldwide
+Global Trends in the Hospitality Industry
+Career Opportunities for Expats in International Tech Hubs
+Navigating Business Etiquette in Different Cultures
+The Rise of Global Start-Ups
+Language Skills for International Business Success
+Culinary Arts: Global Fusion Cooking
+Mastering the Art of International Cuisine
+Street Food Delights from Around the World
+Fusion Flavors: Combining Global Culinary Traditions
+Discovering the Best Eateries from Paris to Seoul
+Health-Conscious Dining: Global Vegetarian and Vegan Options
+Wellness Retreats in Tranquil Locations Worldwide
+Achieving Work-Life Balance in Urban Centers
+Adventurous Travel: Backpacking Across Continents
+Exploring Winter Destinations Worldwide
+Technological Innovations in the Hospitality Sector
+Sustainable Practices in Rural Communities Globally
+The Science Behind Brewing Techniques Worldwide
+Urban Planning in Global Metropolitan Cities
+Efficient Public Transport Solutions in Major Cities
+A Beginner's Guide to Traveling the World
+A Culinary Journey Through International Street Foods
+Exploring Historical Landmarks Around the Globe
+Arts and Crafts Traditions in Various Cultures
+Language and Cultural Immersion for Global Travelers
+Martial Arts Training in Different Cultures
+The World of Professional Wrestling
+Popular Sports and Activities Around the Globe
+Trekking Through the World's Mountain Ranges
+Exploring Winter Sports Around the Globe
+          </textarea>
+        </div>
+        <div class="col">
+          <div id="titles-grouped"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
