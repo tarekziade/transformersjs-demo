@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfomer.js demos</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+    <script src="qa.js" type="module" defer></script>
+    <script src="https://rawgit.com/mozilla/readability/master/Readability.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="utils.js" type="module" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <a class="brand" href="#">GAI Demos</a>
+          <div class="tabs" id="navigation">Loading...</div>
+        </div>
+      </nav>
+
+      <div class="card" style="margin-top: 15px; margin-bottom: 15px">
+        <header>
+          <h4>Question Answering</h4>
+        </header>
+        <p>Finds the paragraph that most likely answers the question.</p>
+
+        <p>Model: Xenova/bert-base-cased-distilled-squad (65.8MiB)</p>
+
+        <div style="margin-bottom: 10px">
+        <input id="question" value="what does the sandman do?" type="text" placeholder="Ask your question" disabled></input>
+        </div>
+        <footer class="is-right">
+          <button class="button primary" id="generate-alt-text" disabled>
+            <span id="button-alt-text">Loading model...</span>
+          </button>
+        </footer>
+      </div>
+
+      <div class="row" style="height: 100%">
+        <div id="content" class="col-12">
+          <iframe id="article" src="Sandman.html"> </iframe>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

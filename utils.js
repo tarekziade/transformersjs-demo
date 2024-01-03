@@ -30,12 +30,12 @@ function injectTabsIntoDiv(divId, tabs) {
 
 // Example usage
 var tabsInfo = [
-  { title: "Summarize", href: "index.html", isActive: false },
+  { title: "Summarize", href: "index.html", isActive: true },
   { title: "NER", href: "ner.html", isActive: false },
-  { title: "Group", href: "classification.html", isActive: true },
-  { title: "Autogroup", href: "auto.html", isActive: true },
+  { title: "Group", href: "classification.html", isActive: false },
+  { title: "Autogroup", href: "auto.html", isActive: false },
   { title: "Topics", href: "topics.html", isActive: false },
-  { title: "GPU", href: "gpu.html", isActive: false },
+  { title: "Q/A", href: "qa.html", isActive: false },
 ];
 
 // Call the function with the ID of the target div
