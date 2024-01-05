@@ -1,20 +1,43 @@
-import { pipeline } from "https://cdn.jsdelivr.net/npm/@xenova/transformers";
+import {
+  env,
+  T5Tokenizer,
+  T5ForConditionalGeneration,
+  pipeline,
+} from "https://cdn.jsdelivr.net/npm/@xenova/transformers";
 
 const generateButton = document.getElementById("generate-button");
 const output = document.getElementById("summary-output");
 const stats = document.getElementById("summary-stats");
 const buttonText = document.getElementById("button-text");
 
-const summarization = await pipeline("summarization", "Xenova/t5-small");
+let tokenizer = await T5Tokenizer.from_pretrained("t5-small");
+let model = await T5ForConditionalGeneration.from_pretrained(
+  "tarekziade/wikipedia-summaries-t5-efficient-tiny",
+);
 
-function cleanOutput(text) {
-  const sentences = text.split(/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s/g);
+function cleanOutput(text, maxLength = null) {
+  let sentences = text.match(/[^\.!\?]+[\.!\?]+/g);
+  if (maxLength) {
+    sentences = sentences.slice(0, maxLength);
+  }
 
   const capitalizedSentences = sentences.map((sentence) => {
     return sentence.charAt(0).toUpperCase() + sentence.slice(1);
   });
-
   return capitalizedSentences.join(" ");
+}
+
+function removeHeaders(document) {
+  const headerElements = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+  headerElements.forEach((header) => {
+    header.parentNode.removeChild(header);
+  });
+  const navElements = document.querySelectorAll(
+    'div[class*="nav"],div[class*="menu"],div[class*="noprint"]',
+  );
+  navElements.forEach((div) => {
+    div.parentNode.removeChild(div);
+  });
 }
 
 buttonText.textContent = "Summarize";
@@ -26,26 +49,31 @@ generateButton.addEventListener("click", async () => {
   var iframe = document.getElementById("article");
   var iframeWindow = iframe.contentWindow || iframe.contentDocument;
   var documentClone = iframeWindow.document.cloneNode(true);
+  removeHeaders(documentClone);
 
-  const input = new Readability(documentClone)
+  var input = new Readability(documentClone)
     .parse()
     .textContent.replace(/\s+/g, " ")
     .trim();
 
-  console.log(input);
+  input = cleanOutput(input);
   const start = Date.now();
   var stext = `Text length: ${input.length}. `;
 
-  console.log("Summarizing...");
-
-  const result = await summarization(input, {
-    min_length: 50,
-    max_length: 250,
+  let { input_ids } = await tokenizer("summarize: " + input, {
+    max_length: 512,
+    truncation: true,
   });
 
+  let outputs = await model.generate(input_ids, {
+    max_length: 100,
+    truncation: true,
+  });
+  let result = tokenizer.decode(outputs[0], { skip_special_tokens: true });
+  result = cleanOutput(result, 1);
   const end = Date.now();
-  stext += `Result length: ${result[0].summary_text.length}. `;
-  output.innerHTML = cleanOutput(result[0].summary_text);
+  stext += `Result length: ${result.length}. `;
+  output.innerHTML = cleanOutput(result);
 
   stext += `Execution time: ${end - start} ms.`;
 
