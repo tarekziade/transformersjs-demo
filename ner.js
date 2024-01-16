@@ -215,6 +215,7 @@ function sentenceIterator(text) {
   let sentences;
 
   if (useSegmenter) {
+    console.log("using Intl.Segmenter");
     const segmenter = new Intl.Segmenter("en", { granularity: "sentence" });
     const segments = segmenter.segment(text);
     sentences = Array.from(segments).map((segment) => segment.segment);
@@ -224,7 +225,7 @@ function sentenceIterator(text) {
   }
 
   let current = 0;
-  let num_sentences = 4;
+  let num_sentences = 1;
 
   // Return an iterator
   return {

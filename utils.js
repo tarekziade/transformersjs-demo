@@ -34,7 +34,8 @@ var tabsInfo = [
   { title: "NER", href: "ner.html", isActive: false },
   { title: "Group", href: "classification.html", isActive: false },
   { title: "Autogroup", href: "auto.html", isActive: false },
-  { title: "Topics", href: "topics.html", isActive: false },
+  //{ title: "Topics", href: "topics.html", isActive: false },
+  { title: "Image Labeler", href: "captioning.html", isActive: false },
   { title: "Q/A", href: "qa.html", isActive: false },
 ];
 

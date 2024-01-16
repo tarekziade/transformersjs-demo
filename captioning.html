@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfomer.js demos</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+    <script src="utils.js" type="module" defer></script>
+    <script src="captioning.js" type="module" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <a class="brand" href="#">GAI Demos</a>
+          <div class="tabs" id="navigation">Loading...</div>
+        </div>
+      </nav>
+
+      <div class="card" style="margin-top: 15px; margin-bottom: 15px">
+        <header>
+          <h4>Image Labeler</h4>
+        </header>
+        <p>Labels the provided image</p>
+        <p>Model: tarekziade/vit-base-patch16-224 (88.3MiB)</p>
+
+        <footer class="is-right">
+          <button class="button primary" id="generate-button" disabled>
+            <span id="button-text">Loading model...</span>
+          </button>
+        </footer>
+      </div>
+
+      <div class="row" style="height: 100%">
+        <div id="content" class="col-12">
+          <input type="file" id="image-input" accept="image/*" />
+          <br />
+          <h1 id="caption">???</h1>
+          <p id="stats"></p>
+          <img
+            id="display-image"
+            src="#" // https://upload.wikimedia.org/wikipedia/commons/2/22/Snowman_in_Indiana_2014.jpg"
+            alt="Selected Image Will Display Here"
+          />
+
+          <script>
+            document
+              .getElementById("image-input")
+              .addEventListener("change", function () {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                  const img = document.getElementById("display-image");
+                  img.src = e.target.result;
+                };
+                reader.readAsDataURL(this.files[0]);
+              });
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
