@@ -5,6 +5,11 @@ body {
   height: 100vh;
 }
 
+span.image-wrapper {
+  float: left;
+  margin: 5px;
+}
+
 #sidebar {
   width: 300px;
   background-color: #f2f2f2;

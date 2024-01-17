@@ -36,6 +36,7 @@ var tabsInfo = [
   { title: "Autogroup", href: "auto.html", isActive: false },
   //{ title: "Topics", href: "topics.html", isActive: false },
   { title: "Image Labeler", href: "captioning.html", isActive: false },
+  { title: "Image Labeler 2", href: "labels.html", isActive: false },
   { title: "Q/A", href: "qa.html", isActive: false },
 ];
 
