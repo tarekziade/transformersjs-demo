@@ -6,7 +6,8 @@ const buttonText = document.getElementById("button-text");
 const captioner = await pipeline(
   "image-classification",
   //"Xenova/vit-gpt2-image-captioning",
-  "tarekziade/vit-base-patch16-224",
+  //"tarekziade/vit-base-patch16-224",
+  "tarekziade/deit-tiny-patch16-224",
 );
 
 buttonText.textContent = "Image Labeler";
