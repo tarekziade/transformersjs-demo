@@ -10,10 +10,9 @@ const output = document.getElementById("summary-output");
 const stats = document.getElementById("summary-stats");
 const buttonText = document.getElementById("button-text");
 
-let tokenizer = await T5Tokenizer.from_pretrained("t5-small");
-let model = await T5ForConditionalGeneration.from_pretrained(
-  "tarekziade/wikipedia-summaries-t5-efficient-tiny",
-);
+const model_id = "tarekziade/t5-small-headline-generator-sft";
+let tokenizer = await T5Tokenizer.from_pretrained(model_id);
+let model = await T5ForConditionalGeneration.from_pretrained(model_id);
 
 function cleanOutput(text, maxLength = null) {
   let sentences = text.match(/[^\.!\?]+[\.!\?]+/g);
