@@ -10,7 +10,7 @@ const output = document.getElementById("summary-output");
 const stats = document.getElementById("summary-stats");
 const buttonText = document.getElementById("button-text");
 
-const model_id = "tarekziade/t5-small-headline-generator-sft";
+const model_id = "tarekziade/t5-small-headline-generator-sft-3-3"; //"tarekziade/t5-small-headline-generator-sft";
 let tokenizer = await T5Tokenizer.from_pretrained(model_id);
 let model = await T5ForConditionalGeneration.from_pretrained(model_id);
 
