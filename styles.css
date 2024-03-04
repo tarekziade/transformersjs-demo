@@ -43,3 +43,29 @@ iframe {
   height: 100%;
   border: none;
 }
+
+.progress-container {
+  width: 25px; /* Size of the container */
+  height: 25px; /* Size of the container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-circle {
+  border: 2px solid #f3f3f3; /* Light grey background */
+  border-top: 2px solid #3498db; /* Blue color for the progress arc */
+  border-radius: 50%; /* Makes it a circle */
+  width: 20px; /* Size of the circle */
+  height: 20px; /* Size of the circle */
+  animation: spin 1s linear infinite; /* Rotate animation */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

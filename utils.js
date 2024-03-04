@@ -35,9 +35,11 @@ var tabsInfo = [
   { title: "Group", href: "classification.html", isActive: false },
   { title: "Autogroup", href: "auto.html", isActive: false },
   //{ title: "Topics", href: "topics.html", isActive: false },
-  { title: "Image Labeler", href: "captioning.html", isActive: false },
-  { title: "Image Labeler 2", href: "labels.html", isActive: false },
+  //{ title: "Image Labeler", href: "captioning.html", isActive: false },
+  { title: "Labeler", href: "labels.html", isActive: false },
+  { title: "Objects", href: "labels2.html", isActive: false },
   { title: "Q/A", href: "qa.html", isActive: false },
+  { title: "Spell", href: "spell.html", isActive: false },
 ];
 
 // Call the function with the ID of the target div

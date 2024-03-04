@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfomer.js demos</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+    <script src="utils.js" type="module" defer></script>
+    <script src="spell.js" type="module"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <a class="brand" href="#">GAI Demos</a>
+          <div class="tabs" id="navigation">Loading...</div>
+        </div>
+      </nav>
+
+      <div class="card" style="margin-top: 15px; margin-bottom: 15px">
+        <header>
+          <h4>Spell checker</h4>
+        </header>
+        <p>Autocorrect your query</p>
+        <p>Model: tarekziade/spelling-correction-english-base (97+82MiB)</p>
+        <progress id="progress" value="0" max="100"></progress>
+      </div>
+
+      <div class="row" style="height: 100%">
+        <div id="content" class="col-12">
+
+        Search Query: <input disabled type="text" class="query" id="query"
+        value="Loading model... Hang tight.">
+
+        </input>
+        <div style="display: none" id="anime">
+          <div class="progress-container">
+            <div class="progress-circle"></div>
+          </div>
+        </div>
+
+        <div id="result">
+          The spell check will kick in once you have at least 3 words and stop typing for 1 sec.
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
