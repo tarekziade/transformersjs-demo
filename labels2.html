@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfomer.js demos</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+    <script src="utils.js" type="module" defer></script>
+    <script src="labels2.js" type="module"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <nav class="nav">
+        <div class="nav-left">
+          <a class="brand" href="#">GAI Demos</a>
+          <div class="tabs" id="navigation">Loading...</div>
+        </div>
+      </nav>
+
+      <div class="card" style="margin-top: 15px; margin-bottom: 15px">
+        <header>
+          <h4>Object detection</h4>
+        </header>
+        <p>Labels random images picked from wikimedia</p>
+        <p>Model: tarekziade/yolos-tiny (9.66 MiB)</p>
+
+        <footer class="is-right">
+          <button class="button primary" id="generate-button" disabled>
+            <span id="button-text">Loading model...</span>
+          </button>
+          <button class="button primary" id="pick-images" disabled>
+            <span id="button-images">Random images</span>
+          </button>
+
+        </footer>
+      </div>
+
+      <div class="row" style="height: 100%">
+        <div id="content" class="col-12">
+
+    <div class="image-container" id="imageContainer"></div>
+    </div>
+    </div>
+  </body>
+</html>

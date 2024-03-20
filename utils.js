@@ -37,7 +37,8 @@ var tabsInfo = [
   //{ title: "Topics", href: "topics.html", isActive: false },
   //{ title: "Image Labeler", href: "captioning.html", isActive: false },
   { title: "Labeler", href: "labels.html", isActive: false },
-  { title: "Objects", href: "labels2.html", isActive: false },
+  //{ title: "Objects", href: "labels2.html", isActive: false },
+  { title: "Alt-text", href: "labels3.html", isActive: false },
   { title: "Q/A", href: "qa.html", isActive: false },
   { title: "Spell", href: "spell.html", isActive: false },
 ];
